@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Datepick | Login</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.3/css/materialize.min.css">
+    <link rel="stylesheet" href="styles.css">
+
+  </head>
+  <body class="login">
+    <h3 class="cyan lighten-1">Welcome to Datepick, please login.</h3>
+    <form>
+      <div class="input-field">
+        <label for="email">Email:</label>
+        <input id="email" placeholder="user@example.com" type="text" name="email" value="">
+      </div>
+      <div class="input-field">
+        <label for="password">Password:</label>
+        <input id="password" placeholder="" type="password" name="password" value="">
+      </div>
+      <p class="login-error"></p>
+      <a class="login-button cyan lighten-3 waves-effect waves-light btn">Login</a>
+    </form>
+    <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.3/js/materialize.min.js"></script>
+    <script src="js/sign-in.js" charset="utf-8"></script>
+  </body>
+</html>
