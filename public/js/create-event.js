@@ -13,14 +13,21 @@ auth.onAuthStateChanged(profile => {
   user = profile;
 })
 function createEvent(){
-  firebase.database().ref('users/' + user.uid + '/' + $('#event_title').val()).set({
-    title: $('#event_title').val(),
-    description: $('#event_description').val(),
-    earliest: $('#start_date').val(),
-    latest: $('#end_date').val()
-  }).then(() => {
-    window.location.replace('index.html')
-  }).catch(e => $('.new-event-error').text(e.message))
+  if(user){
+    var invites = $('#event_invites').val();
+    invites = JSON.parse('[' + invites + ']')
+    firebase.database().ref('users/' + user.uid + '/' + $('#event_title').val()).set({
+      title: $('#event_title').val(),
+      description: $('#event_description').val(),
+      earliest: $('#start_date').val(),
+      latest: $('#end_date').val(),
+      invites: invites
+    }).then(() => {
+      window.location.replace('index.html')
+    })
+  } else{
+    $('.new-event-error').text('Please login before creating an event.')
+  }
 }
 document.getElementById('create-event').addEventListener('click', createEvent);
 $(document).ready(function(){

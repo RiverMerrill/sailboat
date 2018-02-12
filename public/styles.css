@@ -1,3 +1,9 @@
+body{
+  color: grey;
+}
+.float-right{
+  float: right;
+}
 .login{
   text-align: center;
 }
@@ -19,6 +25,9 @@
 }
 .login-error, .new-event-error{
   color: red;
+}
+.modal{
+  text-align: center;
 }
 .create-new{
   position: absolute;
